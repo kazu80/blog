@@ -12,7 +12,11 @@ module.exports = (function(eleventyConfig) {
     // シンタックスハイライト
     eleventyConfig.addPlugin(syntaxHighlight);
 
+    //
+    eleventyConfig.addPassthroughCopy("src/css");
+
     // HTMLのminify
+    /*
     eleventyConfig.addTransform("htmlmin", function(content, outputPath) {
         // Eleventy 1.0+: use this.inputPath and this.outputPath instead
         if( outputPath.endsWith(".html") ) {
@@ -26,6 +30,7 @@ module.exports = (function(eleventyConfig) {
 
         return content;
     });
+    */
 
     // 11ty設定
     return {
@@ -34,13 +39,15 @@ module.exports = (function(eleventyConfig) {
             "njk",
             "html"
         ],
-        pathPrefix: "/",
+        pathPrefix: "/blog/",
         markdownTemplateEngine: "liquid",
         htmlTemplateEngine: "njk",
         dataTemplateEngine: "njk",
         passthroughFileCopy: true,
         dir: {
-            input: "src/html",
+            input: "src",
+            includes: "_includes",
+            layouts: "_layouts",
             data: "_data",
             output: "dist"
         }
