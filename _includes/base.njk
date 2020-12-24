@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width">
+    <title>{% if page.url !== '/' %}{{ title }} | {% endif %}{{ site.name }}</title>
+    <meta name="description" content="{{ description }}">
+
+    <link rel="stylesheet" href="{{ '/css/styles.css' | url }}">
+    {% block css -%}{%- endblock %}
+</head>
+<body>
+<header>ヘッダー</header>
+
+<main>
+    {% block main -%}
+        コンテンツ
+    {%- endblock %}
+
+    <p>Update:{{ page.date | readableDate }}</p>
+</main>
+
+<footer>フッター</footer>
+
+<script src="{{ '/js/common.bundle.js' | url }}"></script>
+{% block js -%}{%- endblock %}
+</body>
+</html>
