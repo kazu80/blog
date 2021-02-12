@@ -10,9 +10,17 @@
 
     <link rel="stylesheet" href="{{ '/css/styles.css' | url }}">
     {% block css -%}{%- endblock %}
+
+    <link rel="preload" as="font" type="font/woff2" href="//fonts.gstatic.com/s/pacifico/v16/FwZY7-Qmy14u9lezJ-6I6MmBp0u-zK4.woff2" crossorigin>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-146340724-1"></script>
+    <link rel="preload" as="script" href="/assets/js/analytics.js"
+          onload="var script = document.createElement('script');
+              script.src = this.href;
+              document.body.appendChild(script);">
 </head>
 <body>
-<header>ヘッダー</header>
+<header>Blog</header>
 
 <main>
     {% block main -%}
@@ -21,8 +29,6 @@
 
     <p>Update:{{ page.date | readableDate }}</p>
 </main>
-
-<footer>フッター</footer>
 
 <script src="{{ '/js/common.bundle.js' | url }}"></script>
 {% block js -%}{%- endblock %}

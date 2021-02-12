@@ -10,11 +10,12 @@ description: ページ概要がはいります。
 {%- endblock %}
 
 {% block main -%}
-    <h2>トップページのコンテンツです</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. <br>
-        Adipisci tempora asperiores earum, <br>
-        aspernatur pariatur officia cumque mollitia quos ab sapiente porro nulla cupiditate. <br>
-        Animi unde voluptatibus hic aspernatur deleniti minima.</p>
+    <h2>ブログ一覧</h2>
+    <ul>
+        {%- for post in collections.post -%}
+            <li><a href="/blog{{ post.url }}">{{ post.data.date | readableDate }} - {{ post.data.title }}</a></li>
+        {%- endfor -%}
+    </ul>
 {%- endblock %}
 
 {% block js -%}
