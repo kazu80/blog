@@ -49,7 +49,7 @@ module.exports = (function(eleventyConfig) {
             includes: "_includes",
             layouts: "_layouts",
             data: "_data",
-            output: "dist"
+            output: "docs"
         }
     };
 });
